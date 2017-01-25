@@ -1,12 +1,28 @@
 @import "components/fonts"
 
-body
+html, body
   padding: 0
   margin: 0
+  height: 100%
 
-  @import "components/header"
+body
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: flex-start
+  align-content: stretch
+  align-items: flex-start
+  height: 100%
 
   .content
+    width: 970px
+    margin: 0 auto
+
+  main
+    order: 0
+    flex: 1 1 auto
+    align-self: stretch
+
     &.not-found
       text-align: center
       padding: 44px 0
@@ -22,5 +38,13 @@ body
         font-style: italic
         margin: 0
 
+  header, footer, nav
+    order: 0
+    flex: 0 1 auto
+    align-self: stretch
 
+  @import "components/header"
   @import "components/footer"
+
+
+

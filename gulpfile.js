@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    less = require('gulp-less'),
     sass = require('gulp-sass'),
     pug = require('gulp-pug'),
     livereload = require('gulp-livereload'),
