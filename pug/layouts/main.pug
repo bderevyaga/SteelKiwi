@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+    block vars
+    head
+        title= title
+        link(rel="stylesheet" type="text/css" href="css/style.css")
+        block scripts
+    body
+        include ../components/header
+        block content
+        include ../components/footer
