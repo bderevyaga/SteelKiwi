@@ -1,12 +1,13 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     pug = require('gulp-pug'),
+    coffee = require('gulp-coffee'),
     imagemin = require('gulp-imagemin'),
     livereload = require('gulp-livereload'),
     autoprefixer = require('gulp-autoprefixer'),
     connect = require('gulp-connect');
 
-gulp.task('default', ['connect', 'watch', 'sass', 'pug', 'img', 'fonts']);
+gulp.task('default', ['connect', 'watch', 'sass', 'pug', 'coffee', 'img', 'fonts']);
 
 gulp.task('connect', function () {
     connect.server({
@@ -35,6 +36,12 @@ gulp.task('pug', function () {
         .pipe(connect.reload());
 });
 
+gulp.task('coffee', function() {
+    gulp.src('coffee/*.coffee')
+        .pipe(coffee({bare: true}))
+        .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('img', function () {
     gulp.src('img/*.png')
         .pipe(imagemin())
@@ -49,6 +56,7 @@ gulp.task('fonts', function () {
 gulp.task('watch', function () {
     gulp.watch('sass/**/*.sass', ['sass']);
     gulp.watch('pug/**/*.pug', ['pug']);
+    gulp.watch('coffee/*.*', ['coffee']);
     gulp.watch('img/*.png', ['img']);
     gulp.watch('fonts/*.*', ['fonts']);
 });
