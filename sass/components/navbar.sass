@@ -1,0 +1,17 @@
+@import "../mixins/justify"
+
+nav
+  background-color: #ff8400
+  color: #ffffff
+
+  .content
+    padding: 15px 0
+
+    ul
+      +justify
+      font-size: 20px
+      font-weight: 400
+      text-transform: uppercase
+
+      li:first-child
+        list-style: none

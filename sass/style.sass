@@ -1,28 +1,17 @@
+@import "components/reset"
 @import "components/fonts"
+@import "components/grid"
+@import "components/button"
 
 html, body
-  padding: 0
-  margin: 0
   height: 100%
 
 body
-  display: flex
-  flex-direction: column
-  flex-wrap: nowrap
-  justify-content: flex-start
-  align-content: stretch
-  align-items: flex-start
-  height: 100%
+  font: 100% 'PFDinTextCondPro', serif
 
-  .content
-    width: 970px
-    margin: 0 auto
-
+  @import "components/header"
+  @import "components/navbar"
   main
-    order: 0
-    flex: 1 1 auto
-    align-self: stretch
-
     &.not-found
       text-align: center
       padding: 44px 0
@@ -30,21 +19,9 @@ body
       h1
         font-size: 150px
         font-weight: 400
-        margin: 0 0 45px
 
       p
-        color:  #000000
+        font-family: 'Myriad Pro', serif
         font-size: 30px
         font-style: italic
-        margin: 0
-
-  header, footer, nav
-    order: 0
-    flex: 0 1 auto
-    align-self: stretch
-
-  @import "components/header"
   @import "components/footer"
-
-
-

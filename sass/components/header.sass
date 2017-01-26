@@ -1,22 +1,19 @@
+@import "../mixins/justify"
+
 header
+  color: #000000
+
   .content
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: space-between
-    align-content: space-between
-    align-items: center
+    +justify
 
     padding: 25px 0 45px
 
-    div
-      max-width: 250px
+    .info
+      font-size: 19px
+      font-weight: 400
       text-align: center
-nav
-  display: block
-  font-family: PFDinTextCondPro
-  font-size: 20px
-  font-weight: 400
-  color: #ffffff
-  background-color: #ff8400
-  padding: 15px 0
+
+    .phone
+      font-size: 30px
+      font-weight: 400
+      text-align: center

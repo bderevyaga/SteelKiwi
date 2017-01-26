@@ -1,15 +1,16 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     pug = require('gulp-pug'),
+    imagemin = require('gulp-imagemin'),
     livereload = require('gulp-livereload'),
     autoprefixer = require('gulp-autoprefixer'),
     connect = require('gulp-connect');
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['connect', 'watch', 'sass', 'pug', 'img', 'fonts']);
 
 gulp.task('connect', function () {
     connect.server({
-        root: 'public',
+        root: 'dist',
         livereload: true
     });
 });
@@ -21,7 +22,7 @@ gulp.task('sass', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest('public/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(connect.reload());
 });
 
@@ -30,11 +31,24 @@ gulp.task('pug', function () {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(gulp.dest('public'))
+        .pipe(gulp.dest('dist'))
         .pipe(connect.reload());
+});
+
+gulp.task('img', function () {
+    gulp.src('img/*.png')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('fonts', function () {
+    gulp.src('fonts/*.*')
+        .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('watch', function () {
     gulp.watch('sass/**/*.sass', ['sass']);
     gulp.watch('pug/**/*.pug', ['pug']);
+    gulp.watch('img/*.png', ['img']);
+    gulp.watch('fonts/*.*', ['fonts']);
 });
