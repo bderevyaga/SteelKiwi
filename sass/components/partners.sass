@@ -1,0 +1,50 @@
+@import "../mixins/justify"
+
+.partners
+  background-color: #fdc029
+
+  .content
+    color: #000000
+    text-align: center
+
+    h1
+      font-size: 35px
+      font-weight: 400
+      text-transform: uppercase
+      margin-top: 40px
+      margin-bottom: 25px
+
+    p
+      font-size: 22px
+      font-weight: 300
+      font-style: italic
+      margin-bottom: 50px
+
+    ul
+      +justify
+      font-size: 22px
+      font-weight: 500
+      text-transform: uppercase
+      list-style: none
+
+      li
+        position: relative
+        padding-bottom: 40px
+        &:after
+          content: ''
+          position: absolute
+          left: 0
+          right: 0
+          margin: 0 auto
+          width: 0
+          bottom: -40px
+          border: 20px solid transparent
+          border-top: 20px solid #fdc029
+
+.partners-data
+  .content
+    +justify
+    flex-wrap: wrap
+
+    margin-top: 50px
+    margin-bottom: 50px

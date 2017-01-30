@@ -2,6 +2,7 @@
 @import "components/fonts"
 @import "components/grid"
 @import "components/button"
+@import "mixins/justify"
 
 html, body
   height: 100%
@@ -30,4 +31,22 @@ body
         font-family: 'Myriad Pro', serif
         font-size: 30px
         font-style: italic
+
+
+    .content
+      +justify
+      align-items: flex-start
+      .left
+        @import "components/our_works"
+      .right
+        flex: 0 0 320px
+        text-align: center
+        h1
+          font-size: 35px
+          font-weight: 400
+          text-transform: uppercase
+          margin-bottom: 35px
+          margin-top: 60px
+
+  @import "components/partners"
   @import "components/footer"
