@@ -4,6 +4,28 @@ include ./mixins/our_works
 block vars
     - var title = 'Main'
 block content
+    div.slider
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+        img(src="http://bennettfeely.com/clippy/pics/pittsburgh.jpg")
+
+        .content
+            .form
+                h1 Изготовление деталей из металла по вашим чертежам
+                p В поиске компании по металлообработке? Отправьте ваш запрос для оценки стоимости
+                form
+                    input(type="text")
+                    input(type="text")
+                    input(type="text")
+                    input(type="submit" value="отправить")
+                    p
+                        input(type="checkbox" name="option4" value="a4")
+                        span Подтверждаю согласие на обработку моих персональных данных
+            p * Если требуется отправить чертеж, перейдите на форму заказа
+
     main
         .content
             .left
